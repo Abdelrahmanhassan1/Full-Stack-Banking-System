@@ -9,18 +9,23 @@ function App() {
   return (
     <Router>
       <nav className="Navbar">
-        <Link className="nav_link" to="/">
-          {" "}
-          Home
-        </Link>
-        <Link className="nav_link" to="/customer">
-          {" "}
-          Customer
-        </Link>
-        <Link className="nav_link" to="/transaction">
-          {" "}
-          Transaction
-        </Link>
+        <div className="logo">
+          <h1>Banky</h1>
+        </div>
+        <div className="nav_links">
+          <Link className="nav_link" to="/">
+            {" "}
+            Home
+          </Link>
+          <Link className="nav_link" to="/customer">
+            {" "}
+            Customer
+          </Link>
+          <Link className="nav_link" to="/transaction">
+            {" "}
+            Transaction
+          </Link>
+        </div>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />

@@ -6,32 +6,44 @@
 
 .Navbar {
   height: 8vh;
-  background-color: aquamarine;
+  background-color: rgb(238, 255, 0);
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  padding-left: 20px;
   align-items: center;
 }
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Nova Slim", cursive;
+}
 
+.nav_links {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.nav_link:hover {
+  color: white;
+  animation-name: example;
+  animation-duration: 2s;
+}
+
+@keyframes example {
+  0% {
+    color: rgb(180, 179, 179);
+  }
+
+  100% {
+    color: rgb(48, 48, 48);
+  }
+}
 .nav_link {
   font-size: 25px;
-  color: black;
+  color: rgb(48, 48, 48);
   text-decoration: none;
   padding-right: 40px;
   font-family: sans-serif;
-}
-
-.customerCard {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  padding: 1rem;
-  font-size: 1.2rem;
-  background-color: aliceblue;
-  margin: 10px;
-}
-
-.customerCard h2 {
-  margin: 10px;
 }

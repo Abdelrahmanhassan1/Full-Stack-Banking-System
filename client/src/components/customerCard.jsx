@@ -1,20 +1,18 @@
-// import React from "react";
-// import { useState, useEffect } from "react";
-// import "../App.css";
-// import Axios from "axios";
+import React from "react";
+import "../App.css";
 
-// function CustomerCard(props) {
-//   const [listOfUsers, setListOfUsers] = useState([]);
-
-//   useEffect(() => {
-//     Axios.get("http://localhost:3001/").then((response) => {
-//       setListOfUsers(response.data);
-//     });
-//   }, []);
-//   return (
-//     <tr>
-
-//     </tr>
-//   );
-// }
-// export default CustomerCard;
+function CustomerCard(props) {
+  return (
+    <tbody>
+      {props.listOfUsers.map((user) => (
+        <tr key={user.id}>
+          <td>{user.customerId}</td>
+          <td>{user.name}</td>
+          <td>{user.email}</td>
+          <td>{user.balance}$</td>
+        </tr>
+      ))}
+    </tbody>
+  );
+}
+export default CustomerCard;
