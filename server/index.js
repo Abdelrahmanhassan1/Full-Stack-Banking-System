@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
 const customer_model = require("./models/customers");
 const transaction_model = require("./models/transactions");
 const app = express();
+require("dotenv").config();
 
 app.use(express.json());
 app.use(cors());
@@ -77,6 +77,6 @@ app.get("/readTransaction", (req, res) => {
   });
 });
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
   console.log("Server is running on port 3001");
 });

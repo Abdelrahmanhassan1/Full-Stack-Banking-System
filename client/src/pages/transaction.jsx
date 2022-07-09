@@ -73,7 +73,9 @@ function Transaction() {
             }}
           />
 
-          <button onClick={addTransaction}>Send</button>
+          <button className="submitButton" onClick={addTransaction}>
+            Send
+          </button>
         </div>
       </div>
 

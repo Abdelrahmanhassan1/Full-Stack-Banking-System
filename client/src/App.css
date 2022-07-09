@@ -3,16 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background-image: url("./background\ home.jpg");
-  background-size: fill;
 
-  background-position: top;
-}
 .Navbar {
   height: 8vh;
-  background-color: rgb(238, 255, 0);
+  background-color: #3498db;
+  color: #fff;
   width: 100%;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   padding-left: 20px;
@@ -33,13 +30,13 @@ body {
 
 .nav_link:hover {
   color: white;
-  animation-name: example;
+  animation-name: animate;
   animation-duration: 2s;
 }
 
-@keyframes example {
+@keyframes animate {
   0% {
-    color: rgb(180, 179, 179);
+    color: rgb(63, 63, 63);
   }
 
   100% {
@@ -47,9 +44,76 @@ body {
   }
 }
 .nav_link {
-  font-size: 25px;
-  color: rgb(48, 48, 48);
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
   text-decoration: none;
   padding-right: 40px;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.homePage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transform: translate(30%, 50%);
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+  font-size: 2rem;
+  margin-left: 20px;
+  transform: translate(-90%, 0%);
+}
+.left > h1 {
+  font-size: 3rem;
+  padding: 30px;
+  font-weight: bold;
+  font-family: "Nova Slim", cursive;
+}
+.left > p {
+  font-size: 1.7rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.right > img {
+  width: 40%;
+  height: 40%;
+  box-shadow: grey 10px 10px 20px 1px;
+}
+.pagesButton {
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 10px;
+  padding: 20px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.pagesButton {
+  border-color: #3498db;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.pagesButton:hover,
+.pagesButton:focus {
+  color: #fff;
+  outline: 0;
+  background-color: #000000;
+}
+
+.pagesButton:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
 }
