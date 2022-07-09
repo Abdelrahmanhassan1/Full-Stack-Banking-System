@@ -22,6 +22,7 @@ function Transaction() {
         receiver: receiver,
         amount: amount,
       });
+
       window.location.reload(false);
     }
   }
@@ -34,7 +35,7 @@ function Transaction() {
   useEffect(() => {
     Axios.get("http://localhost:3001/customers").then((response) => {
       setListOfUsers(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     });
   }, []);
 

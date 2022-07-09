@@ -33,11 +33,36 @@ app.post("/addTransaction", (req, res) => {
     receiver: receiver,
     amount: amount,
   });
-  transaction.save((err, transaction) => {
+
+  customer_model.findOne({ name: sender }, async (err, customer) => {
     if (err) {
       res.send(err);
     } else {
-      res.send(transaction);
+      if (parseInt(customer.balance) >= parseInt(amount)) {
+        customer_model.findOneAndUpdate(
+          { name: sender },
+          {
+            balance: (
+              parseFloat(customer.balance) - parseFloat(amount)
+            ).toString(),
+          },
+          async (err) => {
+            if (err) {
+              res.send(err);
+            } else {
+              transaction.save((err, transaction) => {
+                if (err) {
+                  res.send(err);
+                } else {
+                  res.send(transaction);
+                }
+              });
+            }
+          }
+        );
+      } else {
+        res.send("Insufficient Balance");
+      }
     }
   });
 });
@@ -51,6 +76,7 @@ app.get("/readTransaction", (req, res) => {
     }
   });
 });
+
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
 });
