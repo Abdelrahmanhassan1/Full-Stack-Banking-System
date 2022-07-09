@@ -2,16 +2,20 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import TransactionCard from "../components/transactionCard";
+import "../transactionPage.css";
 
 function Transaction() {
   const [sender, setSender] = useState("");
   const [receiver, setReceiver] = useState("");
   const [amount, setAmount] = useState("");
   const [listOfTransactions, setListOfTransactions] = useState([]);
+  const [listOfUsers, setListOfUsers] = useState([]);
 
   function addTransaction() {
     if (sender === "" || receiver === "" || amount === "") {
       alert("Please fill in all fields");
+    } else if (sender === receiver) {
+      alert("You can't send money to yourself");
     } else {
       Axios.post("http://localhost:3001/addTransaction", {
         sender: sender,
@@ -27,34 +31,49 @@ function Transaction() {
     });
   }, []);
 
+  useEffect(() => {
+    Axios.get("http://localhost:3001/customers").then((response) => {
+      setListOfUsers(response.data);
+      console.log(response.data);
+    });
+  }, []);
+
   return (
-    <div>
+    <div className="transaction">
       <div className="transactionForm">
-        <label>From</label>
-        <input
-          type="text"
-          name="sender"
-          onChange={(event) => {
-            setSender(event.target.value);
-          }}
-        />
-        <label>To</label>
-        <input
-          type="text"
-          name="receiver"
-          onChange={(event) => {
-            setReceiver(event.target.value);
-          }}
-        />
-        <label>Amount</label>
-        <input
-          type="text"
-          name="amount"
-          onChange={(event) => {
-            setAmount(event.target.value);
-          }}
-        />
-        <button onClick={addTransaction}>Send</button>
+        <div className="senderAndReceiver">
+          <label>From</label>
+          <select name="sender" onChange={(e) => setSender(e.target.value)}>
+            <option value="">Sender:</option>
+            {listOfUsers.map((user) => (
+              <option key={user.id} value={user.name}>
+                {user.name}
+              </option>
+            ))}
+          </select>
+
+          <label>To</label>
+          <select name="receiver" onChange={(e) => setReceiver(e.target.value)}>
+            <option value="">Receiver:</option>
+            {listOfUsers.map((user) => (
+              <option key={user.id} value={user.name}>
+                {user.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="amount">
+          <label>Amount</label>
+          <input
+            type="text"
+            name="amount"
+            onChange={(event) => {
+              setAmount(event.target.value);
+            }}
+          />
+
+          <button onClick={addTransaction}>Send</button>
+        </div>
       </div>
 
       <div className="transactionList">

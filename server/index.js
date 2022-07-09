@@ -14,7 +14,7 @@ mongoose.connect(
   { useNewUrlParser: true }
 );
 
-app.get("/", (req, res) => {
+app.get("/customers", (req, res) => {
   customer_model.find({}, (err, customers) => {
     if (err) {
       res.send(err);

@@ -7,7 +7,7 @@ function Customer() {
   const [listOfUsers, setListOfUsers] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/").then((response) => {
+    Axios.get("http://localhost:3001/customers").then((response) => {
       setListOfUsers(response.data);
     });
   }, []);
