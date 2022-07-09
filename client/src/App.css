@@ -3,7 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-image: url("./background\ home.jpg");
+  background-size: fill;
 
+  background-position: top;
+}
 .Navbar {
   height: 8vh;
   background-color: rgb(238, 255, 0);
@@ -12,6 +17,7 @@
   justify-content: space-between;
   padding-left: 20px;
   align-items: center;
+  box-shadow: grey 10px 10px 20px 1px;
 }
 .logo {
   font-size: 1.5rem;

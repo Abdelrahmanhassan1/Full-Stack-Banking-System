@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
-
+import "../App.css";
 function Home() {
   const customerRoute = () => {
     window.location.href = "/customer";

@@ -3,9 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background-color: #ccf3fa;
-}
+/* body {
+  background-color: #d1cfcf;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+} */
 
 table {
   border-radius: 10px;
@@ -56,6 +57,7 @@ select {
   font-size: 1.3rem;
   border-radius: 10px;
   padding: 4px;
+  cursor: pointer;
 }
 input {
   font-size: 1rem;
@@ -69,7 +71,13 @@ button {
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
-  border: 1px solid #000000;
+  /* border: 1px solid #000000; */
+  box-shadow: grey 1px 1px 2px 1px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #000000;
+  color: #eaeaea;
 }
 
 .transactionList {
