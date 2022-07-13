@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const customer_model = require("./models/customers");
 const transaction_model = require("./models/transactions");
+const { parse } = require("dotenv");
 const app = express();
 require("dotenv").config();
 
@@ -60,6 +61,39 @@ app.post("/addTransaction", (req, res) => {
             }
           }
         );
+      } else {
+        res.send("Insufficient Balance");
+      }
+    }
+  });
+  customer_model.findOne({ name: sender }, async (err, customerr) => {
+    if (err) {
+      res.send(err);
+    } else {
+      if (parseInt(customerr.balance) >= parseInt(amount)) {
+        customer_model.findOne({ name: receiver }, async (err, customer) => {
+          customer_model.findOneAndUpdate(
+            { name: receiver },
+            {
+              balance: (
+                parseFloat(customer.balance) + parseFloat(amount)
+              ).toString(),
+            },
+            async (err) => {
+              if (err) {
+                res.send(err);
+              } else {
+                transaction.save((err, transaction) => {
+                  if (err) {
+                    res.send(err);
+                  } else {
+                    res.send(transaction);
+                  }
+                });
+              }
+            }
+          );
+        });
       } else {
         res.send("Insufficient Balance");
       }
