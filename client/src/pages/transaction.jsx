@@ -22,7 +22,6 @@ function Transaction() {
         receiver: receiver,
         amount: amount,
       });
-
       window.location.reload(false);
     }
   }
