@@ -42,6 +42,15 @@ npm start
 
 <hr>
 
-<h3>Demo:</h3>
+<!-- <video src="./assets/demo.mp4" style="width:80%"></video> -->
 
-<video src="./assets/demo.mp4" style="width:80%"></video>
+<!-- [![Watch the video]("./assets/background home.jpg")](https://www.youtube.com/watch?v=6fpBC1Oy7oU) -->
+
+## 🎥 Demo<a name = "demo"></a>
+
+<div name = "demo" align="center" width=1189>
+  
+<!-- ![GIFDemo](README/videos/Demo1.mp4) -->
+https://www.youtube.com/watch?v=6fpBC1Oy7oU
+
+</div>
