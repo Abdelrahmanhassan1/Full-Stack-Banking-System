@@ -3,11 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
 table {
   border-radius: 10px;
-  width: 50%;
+  width: 60rem;
   border: 1px solid #eeeeee;
+  margin-bottom: 5rem;
+  margin-top: 25px;
 }
 thead {
   background-color: #000000;
@@ -32,19 +39,35 @@ td {
 .transaction {
   display: flex;
   flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 .transactionForm {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
-  margin: 15px;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  background-color: #96d0f7;
+  border-radius: 10px;
+  width: 40%;
+  margin-bottom: 25px;
 }
 .senderAndReceiver,
 .amount {
-  padding: 15px;
+  padding: 5px;
   font-size: 1.5rem;
   font-family: "Times New Roman", Times, serif;
+}
+
+.senderAndReceiver {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-end;
 }
 label {
   margin: 10px;
@@ -54,21 +77,16 @@ select {
   border-radius: 10px;
   padding: 4px;
   cursor: pointer;
-  margin-right: 20px;
+  margin: 20px;
 }
 input {
-  font-size: 1rem;
+  font-size: 1.4rem;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
   margin: 10px;
   border: 1px solid #000000;
-}
-
-.transactionList {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 150px;
+  text-align: center;
 }
 
 .submitButton {
@@ -79,7 +97,7 @@ input {
   font-weight: 400;
   line-height: 1;
   margin: 10px;
-  padding: 20px;
+  padding: 15px;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
@@ -104,4 +122,13 @@ input {
 
 .submitButton:hover {
   box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+.transactionList > label {
+  font-size: 1.7rem;
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  color: #ffffff;
 }

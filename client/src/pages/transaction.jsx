@@ -41,29 +41,36 @@ function Transaction() {
   return (
     <div className="transaction">
       <div className="transactionForm">
+        <label>Transaction Form:</label>
         <div className="senderAndReceiver">
-          <label>From</label>
-          <select name="sender" onChange={(e) => setSender(e.target.value)}>
-            <option value="">Sender:</option>
-            {listOfUsers.map((user) => (
-              <option key={user.id} value={user.name}>
-                {user.name}
-              </option>
-            ))}
-          </select>
-
-          <label>To</label>
-          <select name="receiver" onChange={(e) => setReceiver(e.target.value)}>
-            <option value="">Receiver:</option>
-            {listOfUsers.map((user) => (
-              <option key={user.id} value={user.name}>
-                {user.name}
-              </option>
-            ))}
-          </select>
+          <div className="sender">
+            <label>From:</label>
+            <select name="sender" onChange={(e) => setSender(e.target.value)}>
+              <option value="">Sender:</option>
+              {listOfUsers.map((user) => (
+                <option key={user.id} value={user.name}>
+                  {user.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="receiver">
+            <label>To:</label>
+            <select
+              name="receiver"
+              onChange={(e) => setReceiver(e.target.value)}
+            >
+              <option value="">Receiver:</option>
+              {listOfUsers.map((user) => (
+                <option key={user.id} value={user.name}>
+                  {user.name}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
         <div className="amount">
-          <label>Amount</label>
+          <label>Amount:</label>
           <input
             type="text"
             name="amount"
@@ -71,14 +78,15 @@ function Transaction() {
               setAmount(event.target.value);
             }}
           />
-
-          <button className="submitButton" onClick={addTransaction}>
-            Send
-          </button>
+          <label>$</label>
         </div>
+        <button className="submitButton" onClick={addTransaction}>
+          Submit
+        </button>
       </div>
 
       <div className="transactionList">
+        <label>Customers' Transactions</label>
         <table>
           <thead>
             <tr>

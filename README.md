@@ -39,3 +39,9 @@ npm start
 ```
 
 <h3>And then the application should start.</h3>
+
+<hr>
+
+<h3>Demo:</h3>
+
+<video src="./assets/demo.mp4" style="width:80%"></video>
