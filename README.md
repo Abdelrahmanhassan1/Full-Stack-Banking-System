@@ -1,4 +1,4 @@
-# Basic-Banking-System
+# Bank-System
 
 <h2> MERN Stack Web Application. </h2>
 
